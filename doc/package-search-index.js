@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"br.com.alura.screenmatch.controller"},{"l":"br.com.alura.screenmatch.domain"},{"l":"br.com.alura.screenmatch.domain.film"}];updateSearchResults();

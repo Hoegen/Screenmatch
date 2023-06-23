@@ -12,7 +12,8 @@ public class Film {
     private String genre;
 
     /**
-     * @param filmDto
+     * Constructor for Film class from a FilmDto
+     * @param filmDto a DataTransferObject
      */
     public Film(FilmDto filmDto) {
         this.name = filmDto.name();

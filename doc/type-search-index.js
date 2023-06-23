@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"br.com.alura.screenmatch.domain.film","l":"Film"},{"p":"br.com.alura.screenmatch.controller","l":"FilmController"},{"p":"br.com.alura.screenmatch.domain","l":"FilmDto"},{"p":"br.com.alura.screenmatch","l":"ScreenmatchApplication"}];updateSearchResults();
