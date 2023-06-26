@@ -9,6 +9,8 @@
 
 	<div layout:fragment="content">
 		<h1>Film listing</h1>
+		<a href="/films/form">New</a>
+		<br/>
 		<table>
 			<thead>
 				<tr>
@@ -18,7 +20,9 @@
 					<th>YEAR</th>
 				</tr>
 			</thead>
+			
 			<tbody>
+				<br/>
 				<tr th:each="film : ${list}">
 					<td th:text="${film.name}"></td>
 					<td th:text="${film.length}"></td>
