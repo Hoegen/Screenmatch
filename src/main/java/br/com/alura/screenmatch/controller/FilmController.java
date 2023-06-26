@@ -1,16 +1,15 @@
 package br.com.alura.screenmatch.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.alura.screenmatch.domain.FilmDto;
 import br.com.alura.screenmatch.domain.film.Film;
+import br.com.alura.screenmatch.domain.film.FilmDto;
+import br.com.alura.screenmatch.domain.film.FilmRepository;
 
 /**
  * Controller for the /films URL
@@ -19,17 +18,16 @@ import br.com.alura.screenmatch.domain.film.Film;
 @RequestMapping("/films")
 public class FilmController {
 	
-	private List<Film> films = new ArrayList<Film>();
-	
-	
-
+	@Autowired
+	private FilmRepository repository;
 	
 	/**
+	 * @param model for spring boot
 	 * @return returns the path for the form
 	 */
 	@GetMapping
 	public String loadListingPage(Model model) {
-		model.addAttribute("list", films);
+		model.addAttribute("list", repository.findAll());
 		return "films/listing";
 	}
 	
@@ -47,7 +45,7 @@ public class FilmController {
 	 */
 	@PostMapping("/form")
 	public String postFilm(FilmDto data) {
-		films.add(new Film(data));
+		repository.save(new Film(data));
 		return "redirect:/films";
 	}
 	

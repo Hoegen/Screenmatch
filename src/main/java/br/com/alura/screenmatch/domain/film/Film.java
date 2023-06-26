@@ -1,11 +1,21 @@
 package br.com.alura.screenmatch.domain.film;
 
-import br.com.alura.screenmatch.domain.FilmDto;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
- * Simple class representing a film
+ * Simple class representing a film's metadata
  */
+@Entity
+@Table(name = "films")
 public class Film {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
     private String name;
     private Integer length;
     private Integer year;
@@ -21,6 +31,12 @@ public class Film {
         this.year = filmDto.year();
         this.genre = filmDto.genre();
     }
+    
+    
+    /**
+     * ConstrutorPadrao
+     */
+    public Film() {}
     
     @Override
     public String toString() {
@@ -51,4 +67,14 @@ public class Film {
     public String getGenre() {
         return genre;
     }
+
+    @SuppressWarnings("javadoc")
+	public Long getId() {
+		return id;
+	}
+
+    @SuppressWarnings("javadoc")
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

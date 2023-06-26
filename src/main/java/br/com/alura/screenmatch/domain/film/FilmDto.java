@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.domain;
+package br.com.alura.screenmatch.domain.film;
 
 /**
  * Simple dto for films
