@@ -77,4 +77,16 @@ public class Film {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
+	/**
+	 * @param data It's the same stuff
+	 */
+	public void updateData(EditFilm data) {
+		name = data.name();
+		length = data.length();
+		year = data.year();
+		genre = data.genre();
+		
+	}
 }

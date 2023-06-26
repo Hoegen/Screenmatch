@@ -18,16 +18,25 @@
 					<th>LENGTH</th>
 					<th>GENRE</th>
 					<th>YEAR</th>
+					<th>ACTIONS</th>
 				</tr>
 			</thead>
 			
 			<tbody>
-				<br/>
 				<tr th:each="film : ${list}">
 					<td th:text="${film.name}"></td>
 					<td th:text="${film.length}"></td>
 					<td th:text="${film.genre}"></td>
 					<td th:text="${film.year}"></td>
+					<td>
+						<a th:href="@{/films/form?id={id}(id=${film.id})}">Update</a>
+					
+						<form action="/films" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="hidden" name="id" th:value="${film.id}">
+							<input type="submit" value="Delete">
+						</form>
+					</td>
 				</tr>
 			</tbody>
 		</table>
