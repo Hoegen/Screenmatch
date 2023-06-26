@@ -34,7 +34,7 @@ public class Film {
     
     
     /**
-     * ConstrutorPadrao
+     * Standard Java constructor necessary for JPA
      */
     public Film() {}
     
